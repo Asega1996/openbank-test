@@ -1,12 +1,25 @@
-// without options
-{"plugins": ["transform-class-properties"]}
-// with options
 {
+  "presets": [
+    "react-app"
+  ],
   "plugins": [
     [
-      "transform-class-properties", {
-      "spec": true
-    }
+      "module-resolver",
+      {
+        "root": ".",
+        "alias": {
+          "@Assets": "./src/assets",
+          "@Constants": "./src/constants",
+          "@Components": "./src/components",
+          "@Locales": "./src/locales",
+          "@Screens": "./src/screens",
+          "@Router": "./src/router",
+          "@Services": "./src/services",
+          "@Store": "./src/store",
+          "@Styles": "./src/styles",
+          "@Types": "./src/types"
+        }
+      }
     ]
   ]
 }
