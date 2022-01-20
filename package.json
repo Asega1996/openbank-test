@@ -3,6 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@emotion/react": "^11.7.1",
+    "@emotion/styled": "^11.6.0",
+    "@material-ui/core": "^4.12.3",
+    "@mui/material": "^5.3.0",
     "@rescripts/cli": "0.0.16",
     "@rescripts/rescript-use-babel-config": "0.0.12",
     "@types/jest": "^27.4.0",
@@ -18,6 +22,7 @@
     "react-i18next": "^10.13.2",
     "react-router-dom": "^5.2.0",
     "react-scripts": "^5.0.0",
+    "styled-components": "^5.3.3",
     "typescript": "^4.5.4"
   },
   "scripts": {
@@ -41,6 +46,7 @@
   },
   "devDependencies": {
     "@types/react-router-dom": "^5.1.5",
+    "@types/styled-components": "^5.1.20",
     "@typescript-eslint/eslint-plugin": "^5.10.0",
     "@typescript-eslint/parser": "^5.10.0",
     "babel-plugin-module-resolver": "^4.1.0",
