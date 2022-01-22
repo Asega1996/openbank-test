@@ -20,7 +20,7 @@ const WizzardFooter: React.FC<WizzardFooterProps> = (
             <Grid alignItems="center" container px={8} py={4}>
                 {/* Render "Cancel" text if exists some fn associated */}
                 <Grid item xs={6} sm={6} md={6} lg={6} xl={6}>
-                    {!onCancel && (
+                    {onCancel && (
                         <CustomTypography
                             fontWeight={'bold'}
                             onClick={onCancel}

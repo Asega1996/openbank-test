@@ -12,7 +12,6 @@ import { passwordManagerActions } from '@Store/actions/passwordManager'
 import { Controller, useForm } from 'react-hook-form'
 import { Grid } from '@mui/material'
 import WizzardFooter from '@Screens/PasswordManager/components/WizzardFooter'
-import { getType } from 'deox'
 import CustomCheckbox from '@Components/CustomCheckbox'
 
 const FormStep1 = () => {
@@ -34,21 +33,17 @@ const FormStep1 = () => {
 
     // on submit form behaviour
     const onSubmit = (data: Step1FormValues) => {
-        dispatch({
-            type: getType(passwordManagerActions.setStep1),
-            payload: data,
-        })
-        dispatch({
-            type: getType(passwordManagerActions.setActiveStep),
-            payload: activeStep + 1,
-        })
+        // Dispatch -> Save Form 1 values in the store
+        dispatch(passwordManagerActions.setStep1(data))
+        // Dispatch -> Pass to next form step
+        dispatch(passwordManagerActions.setActiveStep(activeStep + 1))
     }
 
     const { handleSubmit, control, formState } = useForm<Step1FormValues>({
         defaultValues,
-        mode: 'all',
-        reValidateMode: 'onSubmit',
         resolver: yupResolver(schema),
+        mode: 'all',
+        reValidateMode: 'onBlur',
     })
 
     return (

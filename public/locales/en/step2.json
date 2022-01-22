@@ -1,0 +1,19 @@
+{
+    "create-password": "First of all, you must create a different password for your electronic belongings.", 
+    "you-cant-recover-pwd": "You won't be able to recover your password, so remember it well.",
+    "create-optional-question": "You can also create a hint to help you remember your master password.", 
+    "required-field": "This field is required",
+    "label-password": "Create your Master Password",
+    "password-field-placeholder": "Master password",
+    "label-passwordRepeat": "Repeat your Master Password",
+    "passwordRepeat-field-placeholder": "Repeat your Master Password",
+    "label-optionalQuestion": "Create a hint to remember your password (optional)",
+    "optionalQuestion-field-placeholder": "Enter your hint",
+    "password-field-error-length-min": "Password must contain at least 8 characters",
+    "password-field-error-length-max": "The password must contain a maximum of 24 characters",
+    "password-field-error-no-number": "The password must contain at least one number",
+    "password-field-error-no-uppercase": "The password must contain at least one uppercase letter",
+    "password-field-error-no-lowercase": "Password must contain at least one lowercase letter",
+    "repeat-password-passwords-match": "Passwords do not match",
+    "optionalQuestion-error-length-max": "The hint cannot be longer than 255 characters."
+}

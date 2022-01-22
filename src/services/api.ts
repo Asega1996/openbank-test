@@ -4,7 +4,9 @@ const RESPONSE_OK = {status: 200};
 const RESPONSE_KO = {status: 401};
 
 const submitForm = (pass: string, repass: string, optionalQuestion: string) => { 
-	console.log(repass, optionalQuestion);
+	console.log(pass);
+	console.log(repass);
+	console.log(optionalQuestion);
 	return new Promise((resolve, reject) =>
 		setTimeout(() => 
 			pass !== PRUEBA_KO

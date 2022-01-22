@@ -11,21 +11,26 @@ export function* submitFormSaga() {
     try {
         // Get request params
         const password: string = yield select(getPassword)
-        const passwordRepeat: string = yield select(getPasswordRepeat)
-        const hint: string = yield select(getOptionalQuestion)
+        const repeat: string = yield select(getPasswordRepeat)
+        const optionalQuestion: string = yield select(getOptionalQuestion)
 
         // Make api all
         const response: unknown = yield call(
             submitForm,
             password,
-            passwordRepeat,
-            hint
+            repeat,
+            optionalQuestion
         )
 
         // Evaluate resonse
-            if(response) console.log("ok")
+        if (response) {
+            yield put(passwordManagerActions.success())
+        }
+        else {
+            yield put(passwordManagerActions.error())
+        }
 
     } catch (err) {
-        yield put(passwordManagerActions.error)
+        yield put(passwordManagerActions.error())
     }
 }

@@ -56,12 +56,12 @@ export default createReducer(defaultState, (handleAction) => [
     handleAction(passwordManagerActions.setStep2, (state, { payload }) =>
         evolve(
             {
-                password: always(payload.password),
-                repeatPassword: always(payload.passwordRepeat),
-                optionalQuestion: always(payload.optionalQuestion),
                 success: always(false),
                 error: always(false),
                 fetching: always(false),
+                passwordRepeat: always(payload.passwordRepeat),
+                password: always(payload.password),
+                optionalQuestion: always(payload.optionalQuestion),
             },
             state
         )

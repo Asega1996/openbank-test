@@ -25,6 +25,7 @@ const theme = {
         defaults: {
             white: '#FFFFFF',
             black: '#000000',
+            error: '#ff604f'
         },
     },
 }
