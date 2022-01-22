@@ -2,7 +2,7 @@ import React from 'react'
 import { Grid } from '@mui/material'
 import SpainFlag from '@Assets/flags/spain.svg'
 import UkFlag from '@Assets/flags/uk.svg'
-import { CustomFlag } from './styles'
+import { SCFlag } from './styles'
 import { useTranslation } from 'react-i18next'
 import { checkIfLanguagesAreTheSame } from '@Utils/checkIfLanguagesAreTheSame'
 import { LanguageEntry } from './types'
@@ -28,7 +28,7 @@ const LanguageSelector = () => {
                 {/* Array of langs iteration */}
                 {availableLanguages.map((language, index) => (
                     <Grid key={index} item>
-                        <CustomFlag
+                        <SCFlag
                             onClick={() => changeI18nLanguage(language.code)}
                             selected={checkIfLanguagesAreTheSame(
                                 i18n.language,

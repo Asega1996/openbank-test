@@ -1,7 +1,15 @@
+import CustomStepper from '@Components/CustomStepper'
 import React from 'react'
 import { WizzardHeadWrapper } from './styles'
+import { useSelector } from 'react-redux'
+import { getCurrentActiveStep } from '@Store/reducers/passwordManager'
+
+const steps = [1, 2, 3]
 
 const WizzardHeader: React.FC = () => {
+    const activeStep: number = useSelector(getCurrentActiveStep)
+    console.log(activeStep)
+
     return (
         <WizzardHeadWrapper
             padding="2rem 0rem"
@@ -9,7 +17,7 @@ const WizzardHeader: React.FC = () => {
             justifyContent="center"
             alignContent="flex-start"
         >
-            Stepper
+            <CustomStepper totalSteps={steps} currentStep={activeStep} />
         </WizzardHeadWrapper>
     )
 }

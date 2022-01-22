@@ -1,3 +1,4 @@
+import { TypographyProps } from "@mui/material"
 import React from "react"
 
 type TextAlignmentType = 'center' | 'inherit' | 'justify' | 'left' | 'right'
@@ -13,7 +14,7 @@ export type CustomTypographyProps = {
     letterSpacing?: string
     lineHeight?: string
     content?: string | React.FC
-}
+} & TypographyProps
 
 export type SCTypographyProps = {
     color?: string

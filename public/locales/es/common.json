@@ -1,5 +1,8 @@
 {
   "dummy": "texto inutil",
-  "test": "Prueba téctinca - Alejandro Segovia Gallardo"
+  "test": "Prueba téctinca - Alejandro Segovia Gallardo",
+  "password-manager-title": "Crea tu Password Manager",
+  "cancel": "Cancelar",
+  "next": "Siguiente"
 
 }

@@ -28,7 +28,7 @@ const CustomTypography: React.FC<CustomTypographyProps> = (
 
 CustomTypography.defaultProps = {
     align: 'left',
-    color: theme.palette.info.main,
+    color: theme.palette.secondary.dark,
     fontFamily: 'Quicksand',
     fontSize: '1rem',
     fontStyle: 'normal',
