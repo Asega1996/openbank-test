@@ -1,8 +1,11 @@
-import { Checkbox } from "@material-ui/core";
-import { checkboxClasses, FormControlLabel, formControlLabelClasses } from "@mui/material";
-import theme from "@Styles/theme";
-import styled from "styled-components";
-
+import { Checkbox } from '@material-ui/core'
+import {
+    checkboxClasses,
+    FormControlLabel,
+    formControlLabelClasses,
+} from '@mui/material'
+import theme from '@Styles/theme'
+import styled from 'styled-components'
 
 export const SCFormControlLabel = styled(FormControlLabel)`
     &.${formControlLabelClasses.root} {

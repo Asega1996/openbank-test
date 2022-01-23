@@ -1,5 +1,4 @@
 import React, { Suspense } from 'react'
-import './App.scss'
 
 import Layout from '@Screens/Layout'
 import i18n from '@Services/i18n'

@@ -9,10 +9,19 @@ import {
 import theme from '@Styles/theme'
 import React from 'react'
 import { useTranslation } from 'react-i18next'
-import { SCInputLabel } from './styles'
+import { SCInputLabel, SCSecurityLevelBar } from './styles'
+import { CustomInputProps } from './types'
 
-const CustomInput = (props: any) => {
-    const { label, errors, icon, onClickIcon, ...restProps } = props
+const CustomInput: React.FC<CustomInputProps> = (props: CustomInputProps) => {
+    const {
+        label,
+        errors,
+        icon,
+        onClickIcon,
+        hasSecurityLevel,
+        securityLevel,
+        ...restProps
+    } = props
     const { i18n } = useTranslation()
 
     return (
@@ -43,11 +52,14 @@ const CustomInput = (props: any) => {
                             ) : null
                         }
                     />
+                    {hasSecurityLevel && (
+                        <SCSecurityLevelBar level={securityLevel!} />
+                    )}
 
                     {errors && (
                         <CustomTypography
                             color={theme.palette.defaults.error}
-                            content={i18n.t(errors.message)}
+                            content={i18n.t(errors.message!)}
                         />
                     )}
                 </FormControl>

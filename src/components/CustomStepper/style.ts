@@ -22,15 +22,15 @@ export const SCStepLabel = styled(StepLabel)`
         color: ${theme.palette.secondary.light};
 
         &.Mui-completed {
-          color: ${theme.palette.primary.main};
-          border-radius: 100%;
+            color: ${theme.palette.primary.main};
+            border-radius: 100%;
         }
 
         &.${stepConnectorClasses.active} {
             color: ${theme.palette.secondary.main};
             font-size: 1.75rem;
+            -webkit-filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, .25));
         }
-
     }
 `
 
@@ -63,4 +63,3 @@ export const SCConnector = styled(StepConnector)`
     border-color: inherit;
   }
 `
-

@@ -6,8 +6,18 @@ import { CustomTypographyProps } from './types'
 const CustomTypography: React.FC<CustomTypographyProps> = (
     props: CustomTypographyProps
 ) => {
-    const { align, color, fontFamily, fontSize } = props
-    const { fontStyle, fontWeight, letterSpacing, lineHeight, content } = props
+    const {
+        align,
+        color,
+        fontFamily,
+        fontSize,
+        fontStyle,
+        fontWeight,
+        letterSpacing,
+        lineHeight,
+        content,
+        isLink,
+    } = props
 
     return (
         <SCTypography
@@ -20,6 +30,7 @@ const CustomTypography: React.FC<CustomTypographyProps> = (
             fontWeight={fontWeight}
             letterSpacing={letterSpacing}
             lineHeight={lineHeight}
+            islink={isLink}
         >
             {content}
         </SCTypography>
@@ -35,6 +46,7 @@ CustomTypography.defaultProps = {
     fontWeight: 'normal',
     letterSpacing: '0',
     lineHeight: '1.5rem',
+    isLink: false,
 }
 
 export default CustomTypography

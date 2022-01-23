@@ -19,7 +19,7 @@ i18n.use(Backend)
         detection: {
             lookupLocalStorage: 'language',
         },
-        keySeparator: ".",
+        keySeparator: '.',
     })
 
 export default i18n

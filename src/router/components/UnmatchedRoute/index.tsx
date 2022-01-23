@@ -1,10 +1,25 @@
+import CustomTypography from '@Components/CustomTypography'
+import { Container, Grid } from '@mui/material'
 import React from 'react'
+import { useTranslation } from 'react-i18next'
 import { Route } from 'react-router-dom'
 
 const UnmatchedRoute = () => {
+    const { i18n } = useTranslation()
+
     return (
         <Route path="*">
-            <div>404 no hay nada para la ruta</div>
+            <Container maxWidth="lg">
+                <Grid justifyContent="center" mt={8} container>
+                    <Grid item>
+                        <CustomTypography
+                            fontWeight="bold"
+                            textAlign={'center'}
+                            content={i18n.t('common:unmatched-route')}
+                        />
+                    </Grid>
+                </Grid>
+            </Container>
         </Route>
     )
 }

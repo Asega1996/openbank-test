@@ -21,6 +21,7 @@ import {
     PASSWORD_MAX_LENGTH,
     PASSWORD_MIN_LENGTH,
 } from './validations'
+import { checkIfPasswordContainsRegExp } from '@Utils/checkIfPasswordContainsRegExp'
 
 const FormStep2 = () => {
     // Hooks
@@ -103,6 +104,18 @@ const FormStep2 = () => {
         dispatch(passwordManagerActions.setActiveStep(activeStep - 1))
     }
 
+    const getSecurityLevelOfPassword = (password: string) => {
+        let i = 0
+
+        if (checkIfPasswordContainsRegExp(password, HAS_A_LOWERCASE_CHARACTER))
+            i++
+        if (checkIfPasswordContainsRegExp(password, HAS_A_UPPERCASE_CHARACTER))
+            i++
+        if (checkIfPasswordContainsRegExp(password, HAS_A_DIGIT_CHARACTER)) i++
+        if (password.length >= 8 && password.length <= 24) i++
+        return i
+    }
+
     return (
         <form noValidate onSubmit={handleSubmit(onSubmit)} autoComplete="off">
             <Grid px={8} spacing={4} container mb={3}>
@@ -141,7 +154,11 @@ const FormStep2 = () => {
                                 onBlur={onBlur}
                                 onChange={onChange}
                                 value={value}
-                                errors={error ?? null}
+                                errors={error}
+                                hasSecurityLevel
+                                securityLevel={getSecurityLevelOfPassword(
+                                    value
+                                )}
                                 fullWidth
                             />
                         )}
@@ -174,7 +191,7 @@ const FormStep2 = () => {
                                 onBlur={onBlur}
                                 onChange={onChange}
                                 value={value}
-                                errors={error ?? null}
+                                errors={error}
                                 fullWidth
                             />
                         )}
@@ -206,7 +223,7 @@ const FormStep2 = () => {
                                 onBlur={onBlur}
                                 onChange={onChange}
                                 value={value}
-                                errors={error ?? null}
+                                errors={error}
                                 fullWidth
                             />
                         )}

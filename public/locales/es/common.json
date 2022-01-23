@@ -3,6 +3,7 @@
   "test": "Prueba téctinca - Alejandro Segovia Gallardo",
   "password-manager-title": "Crea tu Password Manager",
   "cancel": "Cancelar",
-  "next": "Siguiente"
-
+  "next": "Siguiente",
+  "unmatched-route": "Lo sentimos, pero no existe ningún contenido para esta url",
+  "processing-request": "Procesando..."
 }

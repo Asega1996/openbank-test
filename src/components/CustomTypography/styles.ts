@@ -1,6 +1,6 @@
-import { Typography } from "@mui/material";
-import styled from "styled-components"
-import { SCTypographyProps } from "./types";
+import { Typography } from '@mui/material'
+import styled from 'styled-components'
+import { SCTypographyProps } from './types'
 
 export const SCTypography = styled(Typography)<SCTypographyProps>`
     color: ${(props) => props.color};
@@ -11,4 +11,5 @@ export const SCTypography = styled(Typography)<SCTypographyProps>`
     letter-spacing: ${(props) => props.letterspacing};
     line-height: ${(props) => props.lineheight};
     text-align: ${(props) => props.align};
+    cursor: ${(props) => (props.islink ? 'pointer' : 'inherit')};
 `

@@ -1,15 +1,36 @@
+import CustomLoader from '@Components/CustomLoader'
 import StatusFeedback from '@Components/StatusFeedback'
-import { getSuccessPasswordManager } from '@Store/reducers/passwordManager'
+import { passwordManagerActions } from '@Store/actions/passwordManager'
+import {
+    getFetching,
+    getSuccessPasswordManager,
+} from '@Store/reducers/passwordManager'
 import React from 'react'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 
 const Step3 = () => {
+    const dispatch = useDispatch()
+
     const success = useSelector(getSuccessPasswordManager)
-    console.log(success)
+    const fetching = useSelector(getFetching)
+
+    const onClickActions = () => {
+        dispatch(passwordManagerActions.reset())
+    }
 
     return (
         <>
-            <StatusFeedback success={success} />
+            {/* Show loader if request didnt finished -> show component feedback when request is finished */}
+            {fetching ? (
+                <CustomLoader />
+            ) : (
+                <>
+                    <StatusFeedback
+                        onClickAction={onClickActions}
+                        success={success}
+                    />
+                </>
+            )}
         </>
     )
 }

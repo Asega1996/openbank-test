@@ -1,0 +1,8 @@
+{
+    "success-title": "¡Tu Password Manager ya está creado!",
+    "error-title": "Ha habido un error",
+    "success-subtitle": "Ahora puedes acceder a la plataforma y gestionar todas tus contraseñas",
+    "error-subtitle": "No hemos podido modificar tu contraseña maestra. Intentalo más tarde.",
+    "success-actions": "Acceder",
+    "error-actions": "Volver a Password Manager"
+}

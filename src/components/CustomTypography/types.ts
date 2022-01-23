@@ -14,6 +14,7 @@ export type CustomTypographyProps = {
     letterSpacing?: string
     lineHeight?: string
     content?: string | React.FC
+    isLink?: boolean
 } & TypographyProps
 
 export type SCTypographyProps = {
@@ -27,5 +28,6 @@ export type SCTypographyProps = {
     letterspacing?: string
     lineheight?: string
     content?: string | React.FC
+    islink?: boolean
 }
 

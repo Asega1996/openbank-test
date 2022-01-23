@@ -1,8 +1,8 @@
-import { combineReducers } from 'redux';
-import PasswordManagerReducer from './passwordManager';
+import { combineReducers } from 'redux'
+import PasswordManagerReducer from './passwordManager'
 
 export const rootReducer = combineReducers({
-  passwordManager: PasswordManagerReducer,
-});
+    passwordManager: PasswordManagerReducer,
+})
 
-export type RootState = ReturnType<typeof rootReducer>;
+export type RootState = ReturnType<typeof rootReducer>

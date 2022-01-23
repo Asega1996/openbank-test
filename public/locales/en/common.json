@@ -1,7 +1,9 @@
 {
-  "dummy": "dummy text",
-  "test": "Technical test - Alejandro Segovia Gallardo",
-  "password-manager-title": "Create your Password Manager",
-  "cancel": "Cancel",
-  "next": "Next"
+    "dummy": "dummy text",
+    "test": "Technical test - Alejandro Segovia Gallardo",
+    "password-manager-title": "Create your Password Manager",
+    "cancel": "Cancel",
+    "next": "Next",
+    "unmatched-route": "Sorry, but there is no content for this url.",
+    "processing-request": "Processing..."
 }

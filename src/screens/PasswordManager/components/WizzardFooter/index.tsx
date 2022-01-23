@@ -19,9 +19,10 @@ const WizzardFooter: React.FC<WizzardFooterProps> = (
             {/*Footer Container */}
             <Grid alignItems="center" container px={8} py={4}>
                 {/* Render "Cancel" text if exists some fn associated */}
-                <Grid item xs={6} sm={6} md={6} lg={6} xl={6}>
+                <Grid item xs={6} sm={1}>
                     {onCancel && (
                         <CustomTypography
+                            isLink
                             fontWeight={'bold'}
                             onClick={onCancel}
                             color={theme.palette.secondary.dark}
@@ -31,16 +32,7 @@ const WizzardFooter: React.FC<WizzardFooterProps> = (
                 </Grid>
 
                 {/* Render submit forms btn */}
-                <Grid
-                    justifyContent="flex-end"
-                    item
-                    container
-                    xs={6}
-                    sm={6}
-                    md={6}
-                    lg={6}
-                    xl={6}
-                >
+                <Grid justifyContent="flex-end" item container xs={6} sm={11}>
                     <CustomButton
                         type="submit"
                         iconright={<ArrowForwardIosIcon fontSize="small" />}

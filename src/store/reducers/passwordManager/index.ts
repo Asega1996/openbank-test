@@ -103,7 +103,7 @@ export default createReducer(defaultState, (handleAction) => [
     handleAction(passwordManagerActions.reset, (state) =>
         evolve(
             {
-                chechTerms: always(defaultState.checkTerms),
+                checkTerms: always(defaultState.checkTerms),
                 activeStep: always(defaultState.activeStep),
                 password: always(defaultState.password),
                 passwordRepeat: always(defaultState.passwordRepeat),
@@ -130,3 +130,4 @@ export const getSuccessPasswordManager = (state: RootState) =>
     state.passwordManager.success
 export const getCheckTerms = (state: RootState) =>
     state.passwordManager.checkTerms
+export const getFetching = (state: RootState) => state.passwordManager.fetching

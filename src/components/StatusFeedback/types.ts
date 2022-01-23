@@ -1,4 +1,5 @@
 
 export type CustomFeedbackProps = {
-    success: boolean
+    success: boolean,
+    onClickAction: () => void
 }

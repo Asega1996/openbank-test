@@ -25,11 +25,9 @@ export function* submitFormSaga() {
         // Evaluate resonse
         if (response) {
             yield put(passwordManagerActions.success())
-        }
-        else {
+        } else {
             yield put(passwordManagerActions.error())
         }
-
     } catch (err) {
         yield put(passwordManagerActions.error())
     }
