@@ -22,7 +22,7 @@ const WizzardFooter: React.FC<WizzardFooterProps> = (
                 <Grid item xs={6} sm={1}>
                     {onCancel && (
                         <CustomTypography
-                            clickable
+                            clickable={'pointer'}
                             fontWeight={'bold'}
                             onClick={onCancel}
                             color={theme.palette.secondary.dark}

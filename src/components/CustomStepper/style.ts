@@ -29,7 +29,7 @@ export const SCStepLabel = styled(StepLabel)`
         &.${stepConnectorClasses.active} {
             color: ${theme.palette.secondary.main};
             font-size: 1.75rem;
-            -webkit-filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, .25));
+            -webkit-filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.25));
         }
     }
 `

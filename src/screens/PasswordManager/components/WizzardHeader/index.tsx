@@ -8,7 +8,6 @@ const steps = [1, 2, 3]
 
 const WizzardHeader: React.FC = () => {
     const activeStep: number = useSelector(getCurrentActiveStep)
-    console.log(activeStep)
 
     return (
         <WizzardHeadWrapper

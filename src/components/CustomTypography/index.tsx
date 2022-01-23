@@ -46,7 +46,7 @@ CustomTypography.defaultProps = {
     fontWeight: 'normal',
     letterSpacing: '0',
     lineHeight: '1.5rem',
-    clickable: false,
+    clickable: 'inherit',
 }
 
 export default CustomTypography
