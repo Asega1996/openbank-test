@@ -16,7 +16,7 @@ const CustomTypography: React.FC<CustomTypographyProps> = (
         letterSpacing,
         lineHeight,
         content,
-        isLink,
+        clickable,
     } = props
 
     return (
@@ -30,7 +30,7 @@ const CustomTypography: React.FC<CustomTypographyProps> = (
             fontWeight={fontWeight}
             letterSpacing={letterSpacing}
             lineHeight={lineHeight}
-            islink={isLink}
+            clickable={clickable}
         >
             {content}
         </SCTypography>
@@ -46,7 +46,7 @@ CustomTypography.defaultProps = {
     fontWeight: 'normal',
     letterSpacing: '0',
     lineHeight: '1.5rem',
-    isLink: false,
+    clickable: false,
 }
 
 export default CustomTypography

@@ -58,7 +58,7 @@ const StatusFeedback: React.FC<CustomFeedbackProps> = (
                     alignItems="center"
                 >
                     <CustomTypography
-                        isLink
+                        clickable
                         onClick={onClickAction}
                         fontWeight="bold"
                         color={theme.palette.primary.main}

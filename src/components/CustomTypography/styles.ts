@@ -11,5 +11,5 @@ export const SCTypography = styled(Typography)<SCTypographyProps>`
     letter-spacing: ${(props) => props.letterspacing};
     line-height: ${(props) => props.lineheight};
     text-align: ${(props) => props.align};
-    cursor: ${(props) => (props.islink ? 'pointer' : 'inherit')};
+    cursor: ${(props) => (props.clickable ? 'pointer' : 'inherit')};
 `

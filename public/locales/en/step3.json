@@ -2,5 +2,7 @@
     "success-title": "Your Password Manager is now created!",
     "error-title": "There has been an error",
     "success-subtitle": "You can now access the platform and manage all your passwords",
-    "error-subtitle": "We were unable to change your master password. Please try again later."
+    "error-subtitle": "We were unable to change your master password. Please try again later.",
+    "success-actions": "Log in",
+    "error-actions": "Back to Password Manager"
 }
