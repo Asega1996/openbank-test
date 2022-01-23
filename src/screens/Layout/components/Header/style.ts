@@ -1,8 +1,9 @@
 import { Grid } from '@mui/material'
+import theme from '@Styles/theme'
 import styled from 'styled-components'
 
 export const HeaderGrid = styled(Grid)`
-    background-color: #e3e9e9;
+    background-color: ${theme.palette.background.light};
     padding: 0.5rem 2rem;
 `
 
