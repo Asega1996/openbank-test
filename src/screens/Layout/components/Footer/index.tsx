@@ -5,13 +5,13 @@ import { useTranslation } from 'react-i18next'
 import { StickyFooter } from './style'
 
 const Footer = () => {
-    const { i18n } = useTranslation()
+    const { t } = useTranslation()
     return (
         <StickyFooter>
             <CustomTypography
                 color={theme.palette.primary.main}
                 align="center"
-                content={i18n.t('common:test')}
+                content={t('common:test')}
             />
         </StickyFooter>
     )

@@ -12,7 +12,7 @@ const WizzardFooter: React.FC<WizzardFooterProps> = (
     props: WizzardFooterProps
 ) => {
     const { disabled, onCancel } = props
-    const { i18n } = useTranslation()
+    const { t } = useTranslation()
 
     return (
         <WizardFootWrapper container display={'flex'}>
@@ -26,7 +26,7 @@ const WizzardFooter: React.FC<WizzardFooterProps> = (
                             fontWeight={'bold'}
                             onClick={onCancel}
                             color={theme.palette.secondary.dark}
-                            content={i18n.t('common:cancel')}
+                            content={t('common:cancel')}
                         />
                     )}
                 </Grid>
@@ -37,7 +37,7 @@ const WizzardFooter: React.FC<WizzardFooterProps> = (
                         type="submit"
                         iconright={<ArrowForwardIosIcon fontSize="small" />}
                         disabled={disabled}
-                        text={i18n.t('common:next')}
+                        text={t('common:next')}
                     />
                 </Grid>
             </Grid>

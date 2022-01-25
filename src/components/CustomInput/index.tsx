@@ -22,7 +22,7 @@ const CustomInput: React.FC<CustomInputProps> = (props: CustomInputProps) => {
         securityLevel,
         ...restProps
     } = props
-    const { i18n } = useTranslation()
+    const { t } = useTranslation()
 
     return (
         <Grid container>
@@ -59,7 +59,7 @@ const CustomInput: React.FC<CustomInputProps> = (props: CustomInputProps) => {
                     {errors && (
                         <CustomTypography
                             color={theme.palette.defaults.error}
-                            content={i18n.t(errors.message!)}
+                            content={t(errors.message!)}
                         />
                     )}
                 </FormControl>

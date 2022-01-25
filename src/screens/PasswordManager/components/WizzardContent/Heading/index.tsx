@@ -5,7 +5,7 @@ import React from 'react'
 import { useTranslation } from 'react-i18next'
 
 const WizzardContentHeading = () => {
-    const { i18n } = useTranslation()
+    const { t } = useTranslation()
 
     return (
         <>
@@ -14,7 +14,7 @@ const WizzardContentHeading = () => {
                 fontWeight="bold"
                 lineHeight="1.5rem"
                 color={theme.palette.secondary.dark}
-                content={i18n.t('common:password-manager-title')}
+                content={t('common:password-manager-title')}
             />
             <CustomDivider />
         </>

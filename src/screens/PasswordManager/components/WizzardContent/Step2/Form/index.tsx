@@ -2,11 +2,10 @@ import { yupResolver } from '@hookform/resolvers/yup'
 import { passwordManagerActions } from '@Store/actions/passwordManager'
 import React, { useState } from 'react'
 import { Controller, useForm } from 'react-hook-form'
-import { Step2FormValues } from './types'
+import { Step2FormProps, Step2FormValues } from './types'
 import * as yup from 'yup'
 import { useDispatch, useSelector } from 'react-redux'
 import { useTranslation } from 'react-i18next'
-import { getCurrentActiveStep } from '@Store/reducers/passwordManager'
 import { Grid } from '@mui/material'
 import CustomTypography from '@Components/CustomTypography'
 import WizzardFooter from '@Screens/PasswordManager/components/WizzardFooter'
@@ -22,14 +21,17 @@ import {
     PASSWORD_MIN_LENGTH,
 } from './validations'
 import { checkIfPasswordContainsRegExp } from '@Utils/checkIfPasswordContainsRegExp'
+import { getCurrentActiveStep } from '@Store/reducers/passwordManager'
 
-const FormStep2 = () => {
+const FormStep2: React.FC<Step2FormProps> = (props: Step2FormProps) => {
+    const { onSubmit } = props
+
     // Hooks
     const dispatch = useDispatch()
-    const { i18n } = useTranslation()
-    const activeStep: number = useSelector(getCurrentActiveStep)
+    const { t } = useTranslation()
     const [showPassword, setShowPassword] = useState(false)
     const [showPasswordRepeat, setShowPasswordRepeat] = useState(false)
+    const activeStep: number = useSelector(getCurrentActiveStep)
 
     // Form default values
     const defaultValues: Step2FormValues = {
@@ -72,16 +74,6 @@ const FormStep2 = () => {
             ),
     })
 
-    // on submit form behaviour
-    const onSubmit = (data: Step2FormValues) => {
-        // Dispatch -> Save Form 2 values in the store
-        dispatch(passwordManagerActions.setStep2(data))
-        // Dispatch -> Pass to next form step
-        dispatch(passwordManagerActions.setActiveStep(activeStep + 1))
-        // Dispatch -> trigger the saga calling the service
-        dispatch(passwordManagerActions.submitForm())
-    }
-
     // Hook form
     const { handleSubmit, control, formState } = useForm<Step2FormValues>({
         defaultValues,
@@ -120,11 +112,9 @@ const FormStep2 = () => {
         <form noValidate onSubmit={handleSubmit(onSubmit)} autoComplete="off">
             <Grid px={8} spacing={4} container mb={3}>
                 <Grid item xs={12}>
+                    <CustomTypography content={t('step2:create-password')} />
                     <CustomTypography
-                        content={i18n.t('step2:create-password')}
-                    />
-                    <CustomTypography
-                        content={i18n.t('step2:you-cant-recover-pwd')}
+                        content={t('step2:you-cant-recover-pwd')}
                     />
                 </Grid>
 
@@ -137,8 +127,8 @@ const FormStep2 = () => {
                             fieldState: { error },
                         }) => (
                             <CustomInput
-                                label={i18n.t('step2:label-password')}
-                                placeholder={i18n.t(
+                                label={t('step2:label-password')}
+                                placeholder={t(
                                     'step2:password-field-placeholder'
                                 )}
                                 type={showPassword ? 'text' : 'password'}
@@ -174,8 +164,8 @@ const FormStep2 = () => {
                             fieldState: { error },
                         }) => (
                             <CustomInput
-                                label={i18n.t('step2:label-passwordRepeat')}
-                                placeholder={i18n.t(
+                                label={t('step2:label-passwordRepeat')}
+                                placeholder={t(
                                     'step2:passwordRepeat-field-placeholder'
                                 )}
                                 type={showPasswordRepeat ? 'text' : 'password'}
@@ -202,7 +192,7 @@ const FormStep2 = () => {
             <Grid mb={8} px={8} container>
                 <Grid mb={2} item xs={12}>
                     <CustomTypography
-                        content={i18n.t('step2:create-optional-question')}
+                        content={t('step2:create-optional-question')}
                     />
                 </Grid>
 
@@ -215,8 +205,8 @@ const FormStep2 = () => {
                             fieldState: { error },
                         }) => (
                             <CustomInput
-                                label={i18n.t('step2:label-optionalQuestion')}
-                                placeholder={i18n.t(
+                                label={t('step2:label-optionalQuestion')}
+                                placeholder={t(
                                     'step2:optionalQuestion-field-placeholder'
                                 )}
                                 name={name}

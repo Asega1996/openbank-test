@@ -3,3 +3,7 @@ export type Step2FormValues = {
     passwordRepeat: string
     optionalQuestion: string
 }
+
+export type Step2FormProps = {
+    onSubmit: (data: Step2FormValues) => void
+}

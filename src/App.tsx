@@ -1,5 +1,4 @@
 import React, { Suspense } from 'react'
-
 import Layout from '@Screens/Layout'
 import i18n from '@Services/i18n'
 import { I18nextProvider } from 'react-i18next'

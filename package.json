@@ -37,7 +37,7 @@
   },
   "scripts": {
     "start": "rescripts start",
-    "test": "jest --watch"
+    "test": "jest --watch --silent"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -55,6 +55,8 @@
     ]
   },
   "devDependencies": {
+    "@testing-library/react": "^12.1.2",
+    "@testing-library/user-event": "^13.5.0",
     "@types/enzyme": "^3.10.11",
     "@types/enzyme-adapter-react-16": "^1.0.6",
     "@types/jest": "^27.4.0",

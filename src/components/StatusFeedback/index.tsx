@@ -15,7 +15,7 @@ const StatusFeedback: React.FC<CustomFeedbackProps> = (
     props: CustomFeedbackProps
 ) => {
     const { success, onClickAction } = props
-    const { i18n } = useTranslation()
+    const { t } = useTranslation()
 
     return (
         <>
@@ -30,8 +30,8 @@ const StatusFeedback: React.FC<CustomFeedbackProps> = (
                             fontSize="1.5rem"
                             content={
                                 success
-                                    ? i18n.t('step3:success-title')
-                                    : i18n.t('step3:error-title')
+                                    ? t('step3:success-title')
+                                    : t('step3:error-title')
                             }
                         />
                     </Grid>
@@ -39,8 +39,8 @@ const StatusFeedback: React.FC<CustomFeedbackProps> = (
                         <CustomTypography
                             content={
                                 success
-                                    ? i18n.t('step3:success-subtitle')
-                                    : i18n.t('step3:error-subtitle')
+                                    ? t('step3:success-subtitle')
+                                    : t('step3:error-subtitle')
                             }
                         />
                     </Grid>
@@ -58,14 +58,15 @@ const StatusFeedback: React.FC<CustomFeedbackProps> = (
                     alignItems="center"
                 >
                     <CustomTypography
+                        id="action-text"
                         clickable={'pointer'}
                         onClick={onClickAction}
                         fontWeight="bold"
                         color={theme.palette.primary.main}
                         content={
                             success
-                                ? i18n.t('step3:success-actions')
-                                : i18n.t('step3:error-actions')
+                                ? t('step3:success-actions')
+                                : t('step3:error-actions')
                         }
                     />
                     <SCArrowNext fontSize="small" />

@@ -17,11 +17,13 @@ const CustomTypography: React.FC<CustomTypographyProps> = (
         lineHeight,
         content,
         clickable,
+        id,
     } = props
 
     return (
         <SCTypography
             {...props}
+            id={id}
             align={align}
             color={color}
             fontFamily={fontFamily}

@@ -7,9 +7,23 @@ import Image1 from '@Assets/img/group.svg'
 import Image2 from '@Assets/img/group-3.svg'
 import { useTranslation } from 'react-i18next'
 import ContentTitleDescription from '@Components/ContentTitleDescription'
+import { Step1FormValues } from './Form/types'
+import { passwordManagerActions } from '@Store/actions/passwordManager'
+import { useDispatch, useSelector } from 'react-redux'
+import { getCurrentActiveStep } from '@Store/reducers/passwordManager'
 
 const Step1: React.FC = () => {
-    const { i18n } = useTranslation()
+    // Hooks
+    const { t } = useTranslation()
+    const dispatch = useDispatch()
+    const activeStep: number = useSelector(getCurrentActiveStep)
+
+    const updateFormState = (data: Step1FormValues) => {
+        // Dispatch -> Save Form 1 values in the store
+        dispatch(passwordManagerActions.setStep1(data))
+        // Dispatch -> Pass to next form step
+        dispatch(passwordManagerActions.setActiveStep(activeStep + 1))
+    }
 
     return (
         <>
@@ -22,30 +36,30 @@ const Step1: React.FC = () => {
                 <Grid marginBottom={2} alignItems={'center'} container>
                     <ContentWithImage
                         image={Image1}
-                        contentText={i18n.t('step1:content-card-1')}
+                        contentText={t('step1:content-card-1')}
                     />
                     <ContentWithImage
                         image={Image2}
-                        contentText={i18n.t('step1:content-card-2')}
+                        contentText={t('step1:content-card-2')}
                     />
                 </Grid>
 
                 {/* Descriptors */}
                 <Grid>
                     <ContentTitleDescription
-                        title={i18n.t('step1:how-works')}
-                        description={i18n.t('step1:how-works-description')}
+                        title={t('step1:how-works')}
+                        description={t('step1:how-works-description')}
                     />
                     <ContentTitleDescription
-                        title={i18n.t('step1:what-save')}
-                        description={i18n.t('step1:what-save-description')}
+                        title={t('step1:what-save')}
+                        description={t('step1:what-save-description')}
                     />
                 </Grid>
             </Grid>
 
             {/*Step Form 1*/}
             <Grid>
-                <FormStep1 />
+                <FormStep1 onSubmit={updateFormState} />
             </Grid>
         </>
     )

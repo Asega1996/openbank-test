@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next'
 import { Route } from 'react-router-dom'
 
 const UnmatchedRoute = () => {
-    const { i18n } = useTranslation()
+    const { t } = useTranslation()
 
     return (
         <Route path="*">
@@ -15,7 +15,7 @@ const UnmatchedRoute = () => {
                         <CustomTypography
                             fontWeight="bold"
                             textAlign={'center'}
-                            content={i18n.t('common:unmatched-route')}
+                            content={t('common:unmatched-route')}
                         />
                     </Grid>
                 </Grid>
