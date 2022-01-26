@@ -20,7 +20,7 @@ const StatusFeedback: React.FC<CustomFeedbackProps> = (
     return (
         <>
             <Grid my={4} alignItems="center" justifyContent="center" container>
-                <Grid textAlign="center" item xs={1}>
+                <Grid textAlign="center" item xs={12} sm={1}>
                     {success ? <SCIconSuccess /> : <SCIconError />}
                 </Grid>
                 <Grid mt={3} item container xs={6}>
