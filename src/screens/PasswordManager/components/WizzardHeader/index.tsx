@@ -7,6 +7,7 @@ import { getCurrentActiveStep } from '@Store/reducers/passwordManager'
 const steps = [1, 2, 3]
 
 const WizzardHeader: React.FC = () => {
+    // Hooks
     const activeStep: number = useSelector(getCurrentActiveStep)
 
     return (

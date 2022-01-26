@@ -9,11 +9,12 @@ import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
 const Step3 = () => {
+    // Hooks
     const dispatch = useDispatch()
-
     const success = useSelector(getSuccessPasswordManager)
     const fetching = useSelector(getFetching)
 
+    // Fn callback onClick action text
     const onClickActions = () => {
         dispatch(passwordManagerActions.reset())
     }

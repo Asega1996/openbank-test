@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next'
 import { Route } from 'react-router-dom'
 
 const UnmatchedRoute = () => {
+    // Hooks
     const { t } = useTranslation()
 
     return (

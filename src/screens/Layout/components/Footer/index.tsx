@@ -5,7 +5,9 @@ import { useTranslation } from 'react-i18next'
 import { StickyFooter } from './style'
 
 const Footer = () => {
+    // Hooks
     const { t } = useTranslation()
+
     return (
         <StickyFooter>
             <CustomTypography

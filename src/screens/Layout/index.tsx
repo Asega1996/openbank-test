@@ -6,8 +6,11 @@ import Header from './components/Header'
 const Layout = () => {
     return (
         <>
+            {/* Application Header*/}
             <Header />
+            {/* Application Content -> Router*/}
             <Content />
+            {/* Application Footer*/}
             <Footer />
         </>
     )

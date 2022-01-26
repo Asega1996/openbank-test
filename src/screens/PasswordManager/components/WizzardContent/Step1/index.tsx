@@ -18,6 +18,7 @@ const Step1: React.FC = () => {
     const dispatch = useDispatch()
     const activeStep: number = useSelector(getCurrentActiveStep)
 
+    //Fn callback onSubmitForm
     const updateFormState = (data: Step1FormValues) => {
         // Dispatch -> Save Form 1 values in the store
         dispatch(passwordManagerActions.setStep1(data))

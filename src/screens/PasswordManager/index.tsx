@@ -4,7 +4,7 @@ import WizzardContent from './components/WizzardContent'
 import WizzardHeader from './components/WizzardHeader'
 import { PaswordManagerWrapper } from './styles'
 
-const PasswordManager = () => {
+const PasswordManager: React.FC = () => {
     return (
         <Grid item xs={12}>
             <PaswordManagerWrapper disableGutters maxWidth="lg">

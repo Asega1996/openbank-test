@@ -23,6 +23,7 @@ import {
 import { checkIfPasswordContainsRegExp } from '@Utils/checkIfPasswordContainsRegExp'
 
 const FormStep2: React.FC<Step2FormProps> = (props: Step2FormProps) => {
+    // Destructuring props
     const { onSubmit } = props
 
     // Hooks
@@ -80,11 +81,12 @@ const FormStep2: React.FC<Step2FormProps> = (props: Step2FormProps) => {
         reValidateMode: 'onBlur',
     })
 
-    // Toogle form passwords visibility
+    // Toogle form password visibility
     const passwordToogleVisibility = () => {
         setShowPassword(!showPassword)
     }
 
+    // Toogle form passwordRepeat visibility
     const passwordRepeatToogleVisibility = () => {
         setShowPasswordRepeat(!showPasswordRepeat)
     }
@@ -94,6 +96,7 @@ const FormStep2: React.FC<Step2FormProps> = (props: Step2FormProps) => {
         dispatch(passwordManagerActions.reset())
     }
 
+    // Fn to set passwordLevel in the form
     const getSecurityLevelOfPassword = (password: string) => {
         let i = 0
 

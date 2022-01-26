@@ -11,7 +11,10 @@ import { useTranslation } from 'react-i18next'
 const WizzardFooter: React.FC<WizzardFooterProps> = (
     props: WizzardFooterProps
 ) => {
+    // Destructuring props
     const { disabled, onCancel } = props
+
+    // Hooks
     const { t } = useTranslation()
 
     return (

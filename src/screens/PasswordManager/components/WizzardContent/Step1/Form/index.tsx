@@ -11,6 +11,7 @@ import CustomCheckbox from '@Components/CustomCheckbox'
 import { getCheckTerms } from '@Store/reducers/passwordManager'
 
 const FormStep1: React.FC<Step1FormProps> = (props: Step1FormProps) => {
+    // Destructuring props
     const { onSubmit } = props
 
     // Hooks
@@ -27,6 +28,7 @@ const FormStep1: React.FC<Step1FormProps> = (props: Step1FormProps) => {
         checkTerms: yup.boolean().required().oneOf([true]),
     })
 
+    // useForm destructuring
     const { handleSubmit, control, formState } = useForm<Step1FormValues>({
         defaultValues,
         resolver: yupResolver(schema),

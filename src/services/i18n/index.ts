@@ -5,6 +5,7 @@ import Backend from 'i18next-http-backend'
 import LanguageDetector from 'i18next-browser-languagedetector'
 import { availableNS, fallbackLanguage } from './config'
 
+// I18n setup configuration
 i18n.use(Backend)
     .use(LanguageDetector)
     .use(initReactI18next)

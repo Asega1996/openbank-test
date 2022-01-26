@@ -8,9 +8,11 @@ import { useDispatch, useSelector } from 'react-redux'
 import { getCurrentActiveStep } from '@Store/reducers/passwordManager'
 
 const Step2 = () => {
+    // Hooks
     const activeStep: number = useSelector(getCurrentActiveStep)
     const dispatch = useDispatch()
 
+    // Fn callback onSubmit Form
     const updateFormState = (data: Step2FormValues) => {
         // Dispatch -> Save Form 2 values in the store
         dispatch(passwordManagerActions.setStep2(data))

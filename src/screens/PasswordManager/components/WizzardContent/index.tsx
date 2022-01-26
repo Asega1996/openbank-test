@@ -7,7 +7,8 @@ import Step2 from './Step2'
 import Step3 from './Step3'
 import { WizardContentWrapper } from './styles'
 
-const WizzardContent = () => {
+const WizzardContent: React.FC = () => {
+    // Hooks
     const activeStep = useSelector(getCurrentActiveStep)
 
     return (
