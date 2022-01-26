@@ -1,4 +1,4 @@
-# Prueba técnica Alejadnro Segovia Gallardo
+# Prueba técnica Alejandro Segovia Gallardo
 
 ## Descripción
 
@@ -76,8 +76,8 @@ En el caso de que dichas dependencias estén ya instaladas, pueden ejecutarse ha
 -   [Babel](https://babeljs.io/): Compilador javascript
 -   [TypeScript](https://www.typescriptlang.org/): Superconjunto del lenguaje Javascript para la gestión de tipos
 -   [Eslint](https://eslint.org/): Herramienta para definir patrones sobre código JavaScript
--   [Prettier](https://prettier.io/): Formateador de código
--   [React](https://es.reactjs.org/): Librería para construir interfaces de usuario con JavaScript
+-   [Prettier](https://prettier.io/): Formateador de código automático
+-   [React](https://es.reactjs.org/): Librería para construir interfaces de usuario/SPAs con JavaScript
 -   [React Hook Form](https://react-hook-form.com/): Librería de formularios para React
 -   [React Router](https://reactrouter.com/): Gestor de rutas para la navegación de la aplicación
 -   [Redux](https://es.redux.js.org/): Gestor de estados de la aplicación
@@ -89,7 +89,7 @@ En el caso de que dichas dependencias estén ya instaladas, pueden ejecutarse ha
 -   [Styled Components](https://styled-components.com/): Para la estilización de componentes a través de css
 -   [enzyme](https://enzymejs.github.io/enzyme/): Librería para ejecutar tests con jest en React
 -   [jest](https://jestjs.io/): Librería de test para JavaScript
--   [Rescripts](https://github.com/harrysolovay/rescripts): framework para ejecución de scripts de configuración
+-   [Rescripts](https://github.com/harrysolovay/rescripts): Framework para ejecución de scripts de configuración
 -   [Yup](https://github.com/jquense/yup): Librería para validación de formularios
 
 ## Justificaciones sobre las dependencias
@@ -102,7 +102,7 @@ En cuanto a la validación de los campos de los formuilarios, se utiliza Yup ya 
 
 ### Redux y Redux Saga
 
-Se ha optado por utilizar Redux como gestor de estados de la aplicación para almacenar la información que se requiera en la aplicación. Esta decisión está tomada en base a la escalabilidad de la librería Redux así como la facilidad para alterar los estados a través de las acciones y su capacidad de integración con middlewares.
+Se ha optado por utilizar Redux como gestor de estados de la aplicación para almacenar la información que se requiera en la aplicación. Esta decisión está tomada en base a la escalabilidad de la librería Redux así como la facilidad para modificar el store a través de las acciones y su capacidad de integración con middlewares.
 
 Para la gestión de side-effects como las llamadas asícocronas se ha optado por usar Redux-Sagas, el cual permite gestionar los flujos de código como si fuera síncrono mediante el uso de funciones generadoras.
 
@@ -120,26 +120,29 @@ Se han utilizado estas librerías de componentes debido a que se se le ha dado u
 
 ## Estructura del proyecto
 
+    .
+    ├── __mocks__                   # Módulos mockeados utilizados para los test
     ├── public
     │   └── locales                 # Traducciones separadas por código de idioma
     ├── src                         # Contenido de nuestra aplicación
     │   ├── assets                  # Imágenes e iconos(svg) usados en la aplicación
     │   ├── components              # Componentes desarrollados
     │   │   └── {ComponentName}
-    │   │       ├── index.test.tsx  # Tests
-    │   │       ├── index.tsx       # Definición
-    │   │       ├── styles.ts       # Estilos usados de apoyo (en index.tsx) para la creación del componente
+    │   │       ├── index.test.tsx  # Tests del componente
+    │   │       ├── index.tsx       # Componente principal
+    │   │       ├── styles.ts       # Estilos/componentes estilizados usados de apoyo (en index.tsx) para la creación del componente
     │   │       └── types.ts        # Tipos del componente
     │   ├── router                  # Configuración de rutas
     │   ├── sreens                  # Lista de pantallas de la aplicación
-    │   │   ├── Layout              # Layout principal de la petición contiene Header Footer y Contenido embebido
+    │   │   ├── Layout              # Layout principal de la petición contiene Header Footer y Contenido de la aplicación
     │   │   └── {ScreenName}
-    │   ├── services                # Configuración de servicios externos (api, i18n, ...)
+    │   ├── services                # Configuración de servicios
     │   ├── store                   # Configuración de la store de redux
     │   │   ├── actions             # Listado de acciones permitidas por el store
     │   │   ├── constants           # Constantes utilizadas para el store
     │   │   ├── reducers            # Reducers de la aplicación
     │   │   └── sagas               # Manejadores de los side effects
+    │   ├── utils                   # Funciones de utilidad usadas en la aplicación
     │   ├── styles                  # Configuración del tema y estilos generales
     │   ├── App.tsx
     │   ├── index.css
@@ -147,7 +150,7 @@ Se han utilizado estas librerías de componentes debido a que se se le ha dado u
     │   └── react-app-env.d.ts
     ├── .babelrc                    # Configuración de babel
     ├── .eslintrc.js                # Configuración de la herramienta eslint
-    ├── .gitignore
+    ├── .gitignore                  # gitignore del proyecto
     ├── .prettierrc                 # Configuración de Prettier para el formateo de código
     ├── .rescriptsrc.js             # Configuración de rescripts para los alias y su integración con babel
     ├── package-lock.json
