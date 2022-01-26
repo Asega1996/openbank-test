@@ -6,7 +6,6 @@ import { useTranslation } from 'react-i18next'
 
 const WizzardContentHeading = () => {
     const { t } = useTranslation()
-
     return (
         <>
             <CustomTypography

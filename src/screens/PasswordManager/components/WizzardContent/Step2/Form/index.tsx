@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 import { Controller, useForm } from 'react-hook-form'
 import { Step2FormProps, Step2FormValues } from './types'
 import * as yup from 'yup'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { useTranslation } from 'react-i18next'
 import { Grid } from '@mui/material'
 import CustomTypography from '@Components/CustomTypography'
@@ -21,7 +21,6 @@ import {
     PASSWORD_MIN_LENGTH,
 } from './validations'
 import { checkIfPasswordContainsRegExp } from '@Utils/checkIfPasswordContainsRegExp'
-import { getCurrentActiveStep } from '@Store/reducers/passwordManager'
 
 const FormStep2: React.FC<Step2FormProps> = (props: Step2FormProps) => {
     const { onSubmit } = props
@@ -31,7 +30,6 @@ const FormStep2: React.FC<Step2FormProps> = (props: Step2FormProps) => {
     const { t } = useTranslation()
     const [showPassword, setShowPassword] = useState(false)
     const [showPasswordRepeat, setShowPasswordRepeat] = useState(false)
-    const activeStep: number = useSelector(getCurrentActiveStep)
 
     // Form default values
     const defaultValues: Step2FormValues = {
@@ -91,9 +89,9 @@ const FormStep2: React.FC<Step2FormProps> = (props: Step2FormProps) => {
         setShowPasswordRepeat(!showPasswordRepeat)
     }
 
-    // On form cancel navigate to previous step
+    // On form cancel reset entire form
     const onCancel = () => {
-        dispatch(passwordManagerActions.setActiveStep(activeStep - 1))
+        dispatch(passwordManagerActions.reset())
     }
 
     const getSecurityLevelOfPassword = (password: string) => {
