@@ -116,7 +116,7 @@ Se ha utilizado la librería de componentes MUI debido a que dicha librería cue
 
 ### Ramda y Deox
 
-Se han utilizado estas librerías de componentes debido a que se se le ha dado un enfoque de programación funcional al código para mejorar la legibilidad y comprensión del mismo.
+Se ha optado por usar ramda y deox debido a que se se le ha dado un enfoque de programación funcional al código para mejorar la legibilidad y comprensión del mismo.
 
 ## Estructura del proyecto
 
