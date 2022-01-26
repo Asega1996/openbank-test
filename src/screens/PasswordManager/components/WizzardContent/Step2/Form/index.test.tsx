@@ -10,6 +10,10 @@ import { act } from 'react-dom/test-utils'
 
 const { store } = configureStore()
 
+const fakeEvent = {
+    preventDefault: () => null,
+}
+
 configure({
     adapter: new Adapter(),
 })
@@ -43,9 +47,6 @@ describe('FormStep2 component testing', () => {
 
     describe('FormStep2 component behavour', () => {
         it('should check a valid form', async () => {
-            const fakeEvent = {
-                preventDefault: () => null,
-            }
             await act(async () => {
                 await componentWrapper
                     .find(`input[name="password"]`)
@@ -65,9 +66,6 @@ describe('FormStep2 component testing', () => {
         })
 
         it('should check an invalid form', async () => {
-            const fakeEvent = {
-                preventDefault: () => null,
-            }
             await act(async () => {
                 await componentWrapper
                     .find(`input[name="password"]`)
